@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+<body>
+<div class="container">
+ <br>
+      <br>
+ <div class="row">
+ <div class="col-lg6 col-md-6 col-sm-6 container justify-content-center card">
+     
+      <h1 text-center>Create New Student</h1>
+      <div class="card-body pt-6">
+      <form th:action="@{/student/addNewStudent}" th:object="${student}" method="POST">
+       <div class="form-group">
+         <label>First Name</label>
+         <input type="text" name="fname" placeholder="Enter first name" class="form-control" th:field="*{fname}">
+          <input type="text" name="lname" placeholder="Enter last name" class="form-control" th:field="*{lname}">
+           <input type="text" name="email" placeholder="Enter email" class="form-control" th:field="*{email}">
+       </div>
+       
+       <div class="box-footer">
+        <button type="submit" class="btn btn-primary">Add</button>
+       </div>
+      
+      </form>
+      </div>
+ </div>
+ </div>
+</div>
+</body>
+</html>
